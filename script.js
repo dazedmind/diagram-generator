@@ -216,3 +216,24 @@ function performSetOperations(setData) {
       console.log("Invalid number of sets.");
     }
   }
+
+const inputParameter = document.querySelectorAll('[data-input]');
+const textParameter = document.querySelectorAll('[data-text]');
+const resetBtn = document.getElementById('reset-btn');
+
+function handleReset() {
+  inputParameter.forEach((e) => {
+    e.value = '';
+  });
+
+  textParameter.forEach((e) => {
+    e.textContent = '';
+  });
+
+  diagram.style.visibility = "hidden";
+  title.style.visibility = "hidden";
+
+  diagram2.style.display = "none";
+  title2.style.visibility ="hidden";  
+}
+resetBtn.addEventListener('click', handleReset);

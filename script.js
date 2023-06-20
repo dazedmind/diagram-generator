@@ -123,9 +123,6 @@ const diffDiagramB = document.getElementById('difference-set-b');
 const compDiagramA = document.getElementById('complement-set-a');
 const compDiagramB = document.getElementById('complement-set-b');
 
-const symmetricDiagramA = document.getElementById('symmetric-set-a');
-const symmetricDiagramB = document.getElementById('symmetric-set-b');
-
 // FOR VENN DIAGRAM - THREE SETS
 const intersectDiagramAB = document.getElementById('intersect-ab');
 const intersectDiagramBC = document.getElementById('intersect-bc');
@@ -236,4 +233,5 @@ function handleReset() {
   diagram2.style.display = "none";
   title2.style.visibility ="hidden";  
 }
+
 resetBtn.addEventListener('click', handleReset);

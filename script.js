@@ -55,6 +55,16 @@ threeSetButton.addEventListener('click', () => {
     title2.style.visibility ="visible";
 })
 
+window.addEventListener('DOMContentLoaded', () => {
+  aside.style.display = "block";
+
+  twoSetContainer.style.display = "flex";
+  twoSetText.style.display = "block"
+  
+  diagram.style.visibility = "visible";
+  title.style.visibility = "visible";
+})
+
 const firstSetInput = document.getElementById('set1');
 const secondSetInput = document.getElementById('set2');
 
@@ -217,8 +227,9 @@ function performSetOperations(setData) {
 const inputParameter = document.querySelectorAll('[data-input]');
 const textParameter = document.querySelectorAll('[data-text]');
 const resetBtn = document.getElementById('reset-btn');
+const resetBtn2 = document.getElementById('reset-btn2');
 
-function handleReset() {
+function handleReset() {  
   inputParameter.forEach((e) => {
     e.value = '';
   });
@@ -235,3 +246,23 @@ function handleReset() {
 }
 
 resetBtn.addEventListener('click', handleReset);
+resetBtn2.addEventListener('click', handleReset);
+// Get the button:
+let mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}

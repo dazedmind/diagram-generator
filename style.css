@@ -4,16 +4,32 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family:'Nunito Sans', sans-serif;
+}
+body{
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(45deg ,blue, cyan, violet, purple);
+    background-size: 300% 300%;
+    animation: color 12s ease-in-out infinite;
 }
 
-body {
-    font-family:'Nunito Sans', sans-serif;
+@keyframes color{
+    0%{
+        background-position: 0 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0 50%;
+    }
 }
 
 header {
     background-color: #191938;
     color: white;
-    padding: 2rem 4rem;
+    padding: 0.5rem 4rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -34,6 +50,12 @@ header {
     gap: 1rem;
 }
 
+.ext-link-container{
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
 main {
     display: flex;
     flex-direction: column;
@@ -49,22 +71,54 @@ main {
 }
 
 button {
-    padding: 1.5rem 3rem;
-    border-radius: 12px;
-    border: none;
-    color: white;
-    background-color: rgb(55, 55, 118);
-    font-weight: bold;
-    font-size: 22px;
-    cursor: pointer;
-    font-family: 'Nunito Sans', sans-serif;
-}
+        align-items: center;
+        background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+        border: 0;
+        border-radius: 8px;
+        box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+        box-sizing: border-box;
+        color: #FFFFFF;
+        display: flex;
+        font-size: 18px;
+        justify-content: center;
+        line-height: 1em;
+        max-width: 100%;
+        min-width: 140px;
+        padding: 3px;
+        touch-action: manipulation;
+        white-space: nowrap;
+        cursor: pointer;
+        transition: all .3s;
+       }
+       
+       button:active,
+       button:hover {
+        outline: 0;
+       }
+       
+       button span {
+        background-color: rgb(5, 6, 45);
+        padding: 10px 20px;
+        border-radius: 6px;
+        width: 100%;
+        height: 100%;
+        transition: 300ms;
+       }
+       
+       button:hover span {
+        background: none;
+       }
+       
+       button:active {
+        transform: scale(0.9);
+       }
 
-#reset-btn {
-    background-color: #b7b7b7;
-    color: black;
-    font-weight: bold;
-}
+       .button-container {
+        display: flex;
+        gap: 1rem;
+        justify-content: flex-end;
+    }
+
 input {
     padding: .6rem .8rem;
     border-radius: 12px;
@@ -129,12 +183,52 @@ input {
     gap: 0.5rem;
 }
 
-#submit-btn, #submit-btn2 {
-    background-color:#373776;
-    color: white;
-    font-weight: bold;
+button#submit-btn, button#submit-btn2 {
+    align-items: center  ;
+    background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
+    border: 0;
+    border-radius: 8px;
+    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    display: flex;
+    font-size: 18px;
+    justify-content: center;
+    line-height: 1em;
+    max-width: 100%;
+    min-width: 140px;
+    padding: 4px;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
     cursor: pointer;
-}
+    transition: all 0.3s;
+    left: 100px;
+  }
+  
+  button#submit-btn2:active,
+  button#submit-btn2:hover {
+    outline: 0;
+  }
+  
+  button#submit-btn2 span.text {
+    background-color: rgb(5, 6, 45);
+    padding: 10px 20px;
+    border-radius: 6px;
+    width: 100%;
+    height: 100%;
+    transition: 300ms;
+  }
+  
+  button#submit-btn2:hover span.text {
+    background: none;
+  }
+  
+  button#submit-btn2:active {
+    transform: scale(0.9);
+  }
 
 #select-2-set {
     display: none;
@@ -153,6 +247,7 @@ aside {
     border: 1px solid black;
     border-radius: 12px;
     display: none;
+    background-color: hsl(231, 100%, 91%, 0.5);
 }
 
 .heading-title {
@@ -169,20 +264,24 @@ aside {
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    background-color: #d2d9ff;
+    background-color: hsl(231, 100%, 91%, 0.5);
     padding: 5rem;
     width: auto;
-    margin: 2rem 2rem;
+    margin: -2rem 2rem;
     border-radius: 12px;
-
-    visibility: hidden;
+    border: 1px solid black;
 }
 
 .venn-diagram-container-2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     display: none;
-
     width: auto;
+    height: 50rem;
     margin: 2rem;
+    background-color: hsl(231, 100%, 91%, 0.5);
+    border: 1px solid black;
 }
 
 .huge-circle-1 {
@@ -193,7 +292,6 @@ aside {
     text-align: end;
     padding: 5rem;
     margin-left: 12rem;
-
     text-align: start;
 }
 
@@ -206,7 +304,6 @@ aside {
     top: 0;
     right: 20%;
     padding: 5rem;
-
     text-align: end;
 }
 
@@ -262,16 +359,75 @@ aside {
     top: 50%;
     left: 41%;
 }
+/* topbutton */
+.buts button {
+    align-items: center;
+    background-image: linear-gradient(144deg, #AF40FF, #5B42F3 50%, #00DDEB);
+    border: 0;
+    border-radius: 5px;
+    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    display: flex;
+    font-size: 18px;
+    justify-content: center;
+    line-height: 1em;
+    max-width: 100%;
+    min-width: 140px;
+    padding: 2px;
+    text-decoration: none;
+    user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: all .3s;
+ 
+  }
+  
+  .buts button:active,
+  .buts button:hover {
+    outline: 0;
+  }
+  
+  .buts button span {
+    background-color: rgb(5, 6, 45);
+    padding: 10px 10px;
+    border-radius: 6px;
+    width: 100%;
+    height: 100%;
+    transition: 300ms;
+  }
+  
+  .buts button:hover span {
+    background: none;
+  }
+  
+  .buts button:active {
+    transform: scale(0.9);
+  }
+
 /* FOOTER SECTION */
 
 footer {
     text-align: center;
     background-color: #191938;
+    margin-top: 5rem;
     padding: 2rem;
     color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 footer a {
-    color:#b7b7b7;
+    color: white;
     font-weight: bold;
 }
+
+#buts{
+    margin-top: 3rem;
+    margin-left: 90%;
+    margin-bottom: -3rem;
+    box-sizing: 30px;
+}
+

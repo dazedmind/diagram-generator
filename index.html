@@ -4,32 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="neutron.png" type="image/x-icon">
+    <link rel="shortcut icon" href="imgs/logo.png" type="image/x-icon">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js" integrity="sha512-fD9DI5bZwQxOi7MhYWnnNPlvXdp/2Pj3XSTRrFs5FQa4mizyGLnJcN6tuvUS6LbmgN1ut+XGSABKvjN0H6Aoow==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <title>Discrete Math</title>
 </head>
+
 <body>
     <header>
-        <h1>Discrete Mathematics</h1>
+        <h1>Discrete Mathematics</h1>   
         <div class="ext-link-container">
-            <a class="github" target="_blank" href="https://github.com/dazedmind/diagram-generator"><i class="fa-brands fa-github fa-2xl"></i></a>
+            <div class="button-container">
+                <button><span id="two-set-btn">2 SETS</span></button>
+                <button><span id="three-set-btn">3 SETS</span></button>
+            </div>
+            <a class="github" target="_blank" href="https://github.com/imrych/Venn-Diagram-Groupings.git"><i class="fa-brands fa-github fa-2xl"></i></a>
         </div>
     </header>
-    <main>
-        <h1>Select number of sets:</h1>
-        <div class="button-container">
-            <button id="two-set-btn">2 SETS</button>
-            <button id="three-set-btn">3 SETS</button>
-            <button id="reset-btn">RESET</button>
-        </div>
 
+    <main>
         <div id="two-set-container">
             <p>Set A</p>
             <input type="text" id="set1" data-input>
             <p>Set B</p>
             <input type="text" id="set2" data-input>
-
-            <input id="submit-btn" type="submit" value="Insert">
+            <button id="submit-btn" type="submit">
+                <span class="text">Insert</span>
+            </button>
+            <button id="reset-btn" onclick="handleReset()"><span>Reset</span></button>
         </div>
     
         <div id="three-set-container">
@@ -39,9 +40,11 @@
             <input type="text" id="set2-of-3" data-input>
             <p>Set C</p>
             <input type="text" id="set3-of-3" data-input>
-
-            <input id="submit-btn2" type="submit" value="Insert">
-        </div>
+                <button id="submit-btn2" type="submit">
+                    <span class="text">Insert</span>
+                </button>
+                <button id="reset-btn2" onclick="handleReset()"><span>Reset</span></button>
+            </div>
     </main>
 
     <!-- SETS -->
@@ -112,8 +115,8 @@
         </div>
     </aside>
 
-    <h1 class="heading-title" id="title">Logic Sets for 2 SETS</h1>
-    <h1 class="heading-title" id="title2">Logic Set for 3 SETS</h1>
+    <h1 class="heading-title" id="title" style="visibility: hidden;">Logic Sets for 2 SETS</h1>
+    <h1 class="heading-title" id="title2" style="visibility: hidden;">Logic Set for 3 SETS</h1>
 
     <div class="venn-diagram-container-2" id="diagram2">
         <div>
@@ -156,13 +159,15 @@
         </div>
     
     </div>
+    <button id="buts" onclick="topFunction()">
+        <span class="buts">Top</span>
+    </button>
     
-
     <script src="script.js"></script>
-
     <footer>
         <p>Created by BSIT 1-1 as a fulfillment for Final Project in Discrete Mathematics (2023)</p>
-        <a href="members.html">Members</a>
+        <br>
+        <button><span><a href="members.html">Members</a></span></button>
     </footer>
 </body>
 </html>
